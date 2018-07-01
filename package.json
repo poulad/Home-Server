@@ -1,0 +1,16 @@
+{
+  "name": "home-server",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "npm run build && http-server dist/web/",
+    "build": "node build.js",
+    "deploy": "node deploy/deploy.js"
+  },
+  "private": true,
+  "devDependencies": {
+    "@types/shelljs": "^0.8.0",
+    "http-server": "^0.11.1",
+    "sass": "^1.8.0",
+    "shelljs": "^0.8.2"
+  }
+}

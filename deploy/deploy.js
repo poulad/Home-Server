@@ -26,13 +26,6 @@ function pushContainers() {
     console.log('## Removing previous containers...');
     $.exec(`docker-compose ${dcOptions} rm -f`);
 
-    console.log('## Copying Nginx site templates...');
-    const nginxDir = `${distDir}/nginx/`;
-    if (!$.test('-d', nginxDir)) {
-        $.mkdir(nginxDir);
-    }
-    $.cp(`${deployDir}/nginx-templates/*.conf`, nginxDir);
-
     console.log('## Building containers...');
     $.exec(`docker-compose ${dcOptions} build --force-rm --no-cache`);
 
